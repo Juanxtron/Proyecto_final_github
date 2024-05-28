@@ -62,3 +62,20 @@ for col in puntaje_columnas:
 
 # Eliminar las filas donde la columna "fami_estratovivienda" tiene el valor "Sin Estrato"
 df_sin_nulos = df_sin_nulos[df_sin_nulos['fami_estratovivienda'] != "Sin Estrato"]
+
+import pandas as pd
+from datetime import datetime
+
+# Supongamos que tu DataFrame se llama df_sin_nulos
+
+# Convertir la columna 'estu_fechanacimiento' a datetime
+df_sin_nulos['estu_fechanacimiento'] = pd.to_datetime(df_sin_nulos['estu_fechanacimiento'], format='%d/%m/%Y')
+
+# Año de referencia
+anio_referencia = 2019
+
+# Calcular la edad
+df_sin_nulos['edad'] = anio_referencia - df_sin_nulos['estu_fechanacimiento'].dt.year
+
+# Opcional: Eliminar la columna original si solo deseas conservar la edad
+df_sin_nulos.drop(columns=['estu_fechanacimiento'], inplace=True)
