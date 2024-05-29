@@ -1,5 +1,4 @@
 from Limpiezadatos import df_sin_nulos
-
 import pandas as pd
 import dash
 from dash import dcc, html
