@@ -61,7 +61,6 @@ for col in puntaje_columnas:
     df_sin_nulos[col] = pd.to_numeric(df_sin_nulos[col], errors='coerce')
 
 # Eliminar las filas donde la columna "fami_estratovivienda" tiene el valor "Sin Estrato"
-df_sin_nulos = df_sin_nulos[df_sin_nulos['fami_estratovivienda'] != "Sin Estrato"]
 
 import pandas as pd
 from datetime import datetime
